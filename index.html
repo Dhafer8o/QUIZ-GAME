@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- START SCREEN -->
+        <div class="screen active" id="start-screen">
+            <h1>Quiz Time!</h1>
+            <p>Pick a category and beat your best score.<br>You have <span id="time-limit">15</span> seconds per question.</p>
+            <div class="categories" id="categories">
+                <!-- Category buttons are created by script.js -->
+            </div>
+        </div>
+
+        <!-- QUIZ SCREEN -->
+        <div class="screen" id="quiz-screen">
+            <div class="quiz-header">
+                <span class="category-label" id="category-label">Category</span>
+                <h2 id="question-text">Question goes here</h2>
+                <div class="quiz-info">
+                    <p>Question <span id="current-question">1</span> of <span id="total-questions">5</span></p>
+                    <p class="timer" id="timer" aria-live="off">⏱ <span id="time-left">15</span>s</p>
+                    <p>Score: <span id="score" aria-live="polite">0</span></p>
+                </div>
+                <div class="timer-bar"><div class="timer-fill" id="timer-fill"></div></div>
+            </div>
+
+            <div id="answers-container" class="answers-container">
+                <!-- Answer buttons are created by script.js -->
+            </div>
+
+            <p class="feedback" id="feedback" aria-live="assertive"></p>
+
+            <div class="progress-bar" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div id="progress" class="progress"></div>
+            </div>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="result-screen" class="screen">
+            <h1>Quiz Results</h1>
+            <div class="result-info">
+                <p>You scored <span id="final-score">0</span> out of <span id="max-score">5</span></p>
+                <div id="result-message">Good job!</div>
+                <p class="best-score" id="best-score"></p>
+            </div>
+            <div class="result-actions">
+                <button id="restart-btn">Play Again</button>
+                <button id="change-category-btn" class="secondary-btn">Change Category</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
